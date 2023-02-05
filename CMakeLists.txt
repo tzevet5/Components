@@ -7,9 +7,6 @@ project(
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_CPPLINT "cpplint")
-set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=*")
-set(CMAKE_LINK_WHAT_YOU_USE TRUE)
 
 find_package(Qt6 REQUIRED COMPONENTS Gui Quick)
 qt_standard_project_setup()

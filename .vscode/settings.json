@@ -2,6 +2,7 @@
   "files.associations": {
     "qtcore": "cpp",
     "qguiapplication": "cpp",
-    "qqmlapplicationengine": "cpp"
+    "qqmlapplicationengine": "cpp",
+    "functional": "cpp"
   }
 }
