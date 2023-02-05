@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "qmlcopms"
+version = "0.1.0"
+description = "QML Custom components."
+authors = ["Nir <88795475+nrbnlulu@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest-qt = "^4.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
