@@ -6,15 +6,18 @@ project(
   LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Gui Quick)
-qt_standard_project_setup()
-# The qt_standard_project_setup command sets project-wide defaults for a typical
-# Qt application. Among other things, this command sets the CMAKE_AUTOMOC
-# variable to ON, which instructs CMake to automatically set up rules so that
-# Qt's Meta-Object Compiler (moc) is called transparently, when required.
+find_package(Qt6 COMPONENTS Quick Qml REQUIRED)
 
-add_library(${PROJECT_NAME} qmlcomps)
-target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Gui Qt6::Quick)
+# Submodule loading
 add_subdirectory(qmlcomps)
+
+option(BUILD_DEMO "Enable building demo project(" ON)
+if(BUILD_DEMO)
+    add_executable(demoapp qmlcomps/demo/main.cpp qmlcomps/demo/rc.qrc)
+    target_link_libraries(demoapp PRIVATE Qt::Quick Qt::Qml videocameraplugin)
+endif()
+
