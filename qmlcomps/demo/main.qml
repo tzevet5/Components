@@ -37,8 +37,10 @@ Window {
                             property double angle: 2 * index * Math.PI / 60
                             property real scaleRatio: 0.8
                             property real size: index * scaleRatio
-                            x: (size + (size) * Math.cos(angle)) + ((parent.width / 2) - size)
-                            y: (size + (size) * Math.sin(angle)) + ((parent.height / 2) - size)
+                            x: (size + (size) * Math.cos(
+                                    angle)) + ((parent.width / 2) - size)
+                            y: (size + (size) * Math.sin(
+                                    angle)) + ((parent.height / 2) - size)
                         }
                     }
 
@@ -60,7 +62,6 @@ Window {
                     }
                 }
 
-
                 Rectangle {
                     width: 120
                     height: 30
@@ -70,7 +71,8 @@ Window {
                     y: 10
                     Text {
                         anchors.centerIn: parent
-                        text: "X: %1, Y: %2".arg(joy.axisX.toFixed(2)).arg(joy.axisY.toFixed(2))
+                        text: "X: %1, Y: %2".arg(joy.axisX.toFixed(2)).arg(
+                                  joy.axisY.toFixed(2))
                         font.bold: true
                     }
                 }

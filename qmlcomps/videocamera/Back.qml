@@ -6,12 +6,12 @@ Rectangle {
     rotation: -40
     gradient: Gradient {
         GradientStop {
-            position: 0.00;
-            color: Qt.darker(root.color, 1.25);
+            position: 0.00
+            color: Qt.darker(root.color, 1.25)
         }
         GradientStop {
-            position: 1.25;
-            color: Qt.lighter(root.color, 1.25);
+            position: 1.25
+            color: Qt.lighter(root.color, 1.25)
         }
     }
     color: "#34393f"
@@ -29,4 +29,3 @@ Rectangle {
         samples: 32
     }
 }
-

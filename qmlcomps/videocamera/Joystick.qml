@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick
 
 Item {
     id: root
@@ -22,13 +22,17 @@ Item {
         for (var i = 0; i < lights.lights.count; i++) {
             var tempTheta = -theta
 
-            if(tempTheta < 0)
+            if (tempTheta < 0)
                 tempTheta += 2 * Math.PI
 
-            var angleBetween = Math.abs(tempTheta - lights.lights.itemAt(i).angle)
+            var angleBetween = Math.abs(
+                        tempTheta - lights.lights.itemAt(i).angle)
 
-            lights.lights.itemAt(i).lightOn = (angleBetween < Math.PI / 6 ||  angleBetween > 2 * Math.PI - Math.PI / 6)
-            lights.lights.itemAt(i).lightBrightness = Math.min(axisX * axisX + axisY * axisY, 1)
+            lights.lights.itemAt(
+                        i).lightOn = (angleBetween < Math.PI / 6
+                                      || angleBetween > 2 * Math.PI - Math.PI / 6)
+            lights.lights.itemAt(i).lightBrightness = Math.min(
+                        axisX * axisX + axisY * axisY, 1)
         }
     }
 
@@ -58,7 +62,6 @@ Item {
         anchors.centerIn: parent
         radius: parent.width / 4
         color: root.color
-
     }
 
     Lights {
@@ -93,7 +96,7 @@ Item {
             if (pressedOnHandle) {
                 var point = mapToItem(center, mouseX, mouseY)
                 var length = Math.sqrt(point.x * point.x + point.y * point.y)
-                if(length > maxRadius)
+                if (length > maxRadius)
                     length = maxRadius
 
                 theta = Math.atan2(-point.y, point.x)

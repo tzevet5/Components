@@ -15,7 +15,6 @@ qt_add_qml_module(videocamera
     Groove.qml
     Handle.qml
     Joystick.qml
-    Light.qml
     Lights.qml
     SparseLight.qml
 )

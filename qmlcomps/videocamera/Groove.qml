@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick
 import Qt5Compat.GraphicalEffects
 
 Rectangle {
@@ -14,8 +14,7 @@ Rectangle {
     smooth: true
 
     layer.enabled: true
-    layer.effect:
-        DropShadow {
+    layer.effect: DropShadow {
         color: "#40000000"
         horizontalOffset: 24 / 356 * root.radius
         verticalOffset: 24 / 356 * root.radius

@@ -1,5 +1,6 @@
-import QtQuick 2.0
+import QtQuick
 import Qt5Compat.GraphicalEffects
+
 Item {
     property double radius: 230
     property string color: "#34393f"
@@ -16,8 +17,7 @@ Item {
         radius: 0.94 * root.radius
         color: root.color
         layer.enabled: true
-        layer.effect:
-            DropShadow {
+        layer.effect: DropShadow {
             color: "#80000000"
             radius: 48 / 230 * root.radius
             samples: 32
@@ -51,12 +51,11 @@ Item {
 
                 property double angle: 2 * index * Math.PI / 4
                 radius: 12 / 240 * root.radius
-                x: (root.radius - radius + (root.radius - radius - 10) * Math.cos(angle)) - width / 2
-                y: (root.radius - radius + (root.radius - radius - 10) * Math.sin(angle)) - height / 2
+                x: (root.radius - radius + (root.radius - radius - 10) * Math.cos(
+                        angle)) - width / 2
+                y: (root.radius - radius + (root.radius - radius - 10) * Math.sin(
+                        angle)) - height / 2
             }
         }
     }
-
-
 }
-
