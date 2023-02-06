@@ -12,41 +12,17 @@ Item {
     property bool lightOn: false
     property double lightBrightness: 1.0
 
-    Canvas {
+    Rectangle {
         id: background
-        width: 2 * radius
-        height: 2 * radius
-        antialiasing: true
-        smooth: true
-        contextType: '2d'
-        onPaint: {
-            if (context) {
-                context.reset();
-                context.beginPath();
-                context.arc(radius, radius, 0.9 * radius, 0, 2 * Math.PI);
-                context.fillStyle = backgroundColor;
-                context.fill();
-            }
-        }
+        anchors.fill: parent
+        radius: parent.radius
+        color: backgroundColor
     }
 
-    Canvas {
+    Rectangle {
         id: light
-        width: 2 * radius
-        height: 2 * radius
-        antialiasing: true
-        smooth: true
-        contextType: '2d'
-        onPaint: {
-            if (context) {
-                context.reset();
-                context.beginPath();
-                context.arc(radius, radius, 0.8 * radius, 0, 2 * Math.PI);
-                context.fillStyle = lightColor;
-                context.fill();
-            }
-        }
-
+        anchors.fill: parent
+        radius: parent.radius
         visible: lightOn
         opacity: lightBrightness
         layer.enabled: true

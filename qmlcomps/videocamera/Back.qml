@@ -1,27 +1,26 @@
 import QtQuick
 import Qt5Compat.GraphicalEffects
 
-Canvas {
+Rectangle {
+    radius: 512
+    rotation: -40
+    gradient: Gradient {
+        GradientStop {
+            position: 0.00
+            color: Qt.darker(root.color, 1.25)
+        }
+        GradientStop {
+            position: 1.25
+            color: Qt.lighter(root.color, 1.25)
+        }
+    }
+    color: "#34393f"
+
     id: root
-    property double radius: 512
-    property string color: "#34393f"
     width: 2 * radius
     height: 2 * radius
     antialiasing: true
     smooth: true
-    contextType: '2d'
-    onPaint: {
-        if (context) {
-            context.reset();
-            context.beginPath();
-            context.arc(radius, radius, 508 / 512 * radius, 0, 2 * Math.PI);
-            var gradient = context.createLinearGradient(0, 0, width, height);
-            gradient.addColorStop(0, Qt.darker(root.color, 1.25));
-            gradient.addColorStop(1, Qt.lighter(root.color, 1.25));
-            context.fillStyle = gradient;
-            context.fill();
-        }
-    }
 
     layer.enabled: false
     layer.effect: InnerShadow {
